@@ -36,3 +36,5 @@ yarn-error.log*
 next-env.d.ts
 
 .stylelintcache
+code-app/.next
+code-app/node_modules
