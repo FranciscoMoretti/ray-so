@@ -18,6 +18,7 @@ import { LANGUAGES } from "./util/languages";
 
 import tailwindLight from "./assets/tailwind/light.json";
 import tailwindDark from "./assets/tailwind/dark.json";
+import slackDark from "shiki/themes/slack-dark.mjs";
 import ExportButton from "./components/ExportButton";
 import { NavigationActions } from "@/components/navigation";
 import { InfoDialog } from "./components/InfoDialog";
@@ -28,7 +29,7 @@ export function Code() {
 
   useEffect(() => {
     getHighlighterCore({
-      themes: [shikiTheme, tailwindLight, tailwindDark],
+      themes: [shikiTheme, tailwindLight, tailwindDark, slackDark],
       langs: [LANGUAGES.javascript.src(), LANGUAGES.tsx.src(), LANGUAGES.swift.src(), LANGUAGES.python.src()],
       loadWasm: getWasm,
     }).then((highlighter) => {

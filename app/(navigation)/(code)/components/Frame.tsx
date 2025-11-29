@@ -527,6 +527,34 @@ const BrowserbaseFrame = () => {
   );
 };
 
+const SparkaFrame = () => {
+  const [darkMode] = useAtom(darkModeAtom);
+  const [padding] = useAtom(paddingAtom);
+  const [showBackground] = useAtom(showBackgroundAtom);
+
+  return (
+    <div
+      className={classNames(
+        styles.frame,
+        showBackground && styles.sparkaFrame,
+        !darkMode && styles.sparkaFrameLightMode,
+        !showBackground && styles.noBackground,
+      )}
+      style={{
+        padding,
+      }}
+    >
+      {!showBackground && <div data-ignore-in-export className={styles.transparentPattern}></div>}
+      <div className={styles.sparkaWindow}>
+        {showBackground && <div className={styles.sparkaGlow} />}
+        <div className={styles.sparkaContent}>
+          <Editor />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const DefaultFrame = () => {
   const [padding] = useAtom(paddingAtom);
   const isSafari = useIsSafari();
@@ -611,6 +639,8 @@ const Frame = ({ resize = true }: { resize?: boolean }) => {
         return <BrowserbaseFrame />;
       case THEMES.nuxt.id:
         return <NuxtFrame />;
+      case THEMES.sparka.id:
+        return <SparkaFrame />;
       default:
         return <DefaultFrame />;
     }
