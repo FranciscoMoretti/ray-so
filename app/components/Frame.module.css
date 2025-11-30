@@ -1807,12 +1807,12 @@
   z-index: 0;
   top: 50%;
   left: 50%;
-  width: calc(100% - 80px);
-  height: calc(100% - 80px);
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
   border-radius: 9999px;
   background-image: linear-gradient(to right, #3b82f6, #14b8a6);
-  filter: blur(64px);
-  opacity: 0.6;
+  filter: blur(75px);
+  opacity: 0.8;
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
@@ -1827,6 +1827,6 @@
   }
 
   .sparkaGlow {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
