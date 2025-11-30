@@ -28,7 +28,7 @@ const TooltipContent = React.forwardRef<
         data-[side=left]:animate-slideLeftAndFade 
         data-[side=right]:animate-slideRightAndFade 
         data-[side=top]:animate-slideUpAndFade`,
-        className
+        className,
       )}
       {...props}
     />

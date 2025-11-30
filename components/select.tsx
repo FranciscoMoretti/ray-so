@@ -41,7 +41,7 @@ const triggerVariants = cva(
       variant: "classic",
       size: "medium",
     },
-  }
+  },
 );
 
 const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.Trigger>, SelectTriggerProps>(
@@ -55,7 +55,7 @@ const SelectTrigger = React.forwardRef<React.ElementRef<typeof SelectPrimitive.T
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
     );
-  }
+  },
 );
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 
@@ -98,7 +98,7 @@ const SelectContent = React.forwardRef<
         `relative z-50 max-h-96 min-w-[6rem] overflow-hidden rounded-md border border-gray-4 bg-panel shadow-lg`,
         position === "popper" &&
           "data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1",
-        className
+        className,
       )}
       position={position}
       {...props}
@@ -108,7 +108,7 @@ const SelectContent = React.forwardRef<
         className={cn(
           "p-1",
           position === "popper" &&
-            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+            "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]",
         )}
       >
         {children}
@@ -137,7 +137,7 @@ const SelectItem = React.forwardRef<
       `h-[29px] gap-2 relative flex w-full cursor-default select-none items-center rounded py-1.5 pl-2 pr-8 text-sm outline-none transition-colors 
       focus:bg-gray-a2 data-[disabled]:pointer-events-none data-[disabled]:opacity-50
       text-gray-10 data-[state=checked]:bg-gray-a3 focus:data-[state=checked]:bg-gray-a3 data-[state=checked]:text-gray-12`,
-      className
+      className,
     )}
     {...props}
   >
