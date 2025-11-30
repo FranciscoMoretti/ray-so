@@ -28,7 +28,16 @@ const formatCode = async (code: string, language: Language | null) => {
     const { default: initRuff, Workspace } = await import("@astral-sh/ruff-wasm-web");
     await initRuff();
 
-    const workspace = new Workspace(Workspace.defaultSettings());
+// @ts-expect-error - Workspace version is outdated
+    const workspace = new Workspace({
+      lineWidth: 80,
+      indentWidth: 2,
+      useSpaces: true,
+      insertFinalNewline: true,
+      trimTrailingWhitespace: true,
+      formatInPlace: false,
+      write: true,
+    });
     const formatted = workspace.format(code);
     return formatted.replace(/\n$/, "");
   }
