@@ -751,7 +751,7 @@ export const THEMES: { [index: string]: Theme } = {
     iconUrl: `${BASE_URL}${SparkaLogoUrl.src}`,
     partner: true,
     font: "geist-mono",
-    lineNumbers: true,
+    lineNumbers: false,
     shikiTheme: "slack-dark",
     syntax: {
       light: convertToShikiTheme({
