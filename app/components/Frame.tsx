@@ -546,7 +546,14 @@ const SparkaFrame = () => {
     >
       {!showBackground && <div data-ignore-in-export className={styles.transparentPattern}></div>}
       <div className={styles.sparkaWindow}>
-        {showBackground && <div className={styles.sparkaGlow} />}
+        {showBackground && (
+          <>
+            <div className={styles.sparkaGlowTop} />
+            <div className={styles.sparkaGlowLeft} />
+            <div className={styles.sparkaGlowRight} />
+            <div className={styles.sparkaGlowBottom} />
+          </>
+        )}
         <div className={styles.sparkaContent}>
           <Editor />
         </div>
